@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архаус - Музей истории и археологии</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+</head>
+<body>
+    <header class="header">
+        <section>
+            <h1>Архаус</h1>
+            <p class="header__subtitle">Музей истории и археологии Республики Марий Эл</p>
+        </section>
+        <a href="#">
+            <img class="header__image" src="images/building.jpg" alt="Здание музея" width="1569" height="700">
+        </a>
+        
+        <nav class="header__menu">
+            <ul class="menu">
+                <li class="menu_item menu_item--active">
+                    <a class="menu_link" href="index.html">Главная</a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="about_museum.html">О музее</a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="for_visitors.html">Посетителям</a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="exhibitions.html">Выставки</a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="other_museums.html">Другие музейные площадки</a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <button popovertarget="pay">Купить билет</button>
+        <div id="pay" popover>
+            <div class="close">
+                <button popovertarget="pay" popovertargetaction="hide" title="Закрыть">x</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Блок с приветствием -->
+        <section class="welcome">
+            <h2 class="welcome__title">Добро пожаловать в Архаус!</h2>
+            <p class="welcome__text">Мы рады приветствовать вас в нашем музее, где история оживает. Узнайте больше о культуре, традициях и археологических находках Марийского края.</p>
+            <a href="about_museum.html" class="welcome__button">Узнать больше</a>
+        </section>
+
+        <!-- Блок с актуальными выставками -->
+        <section class="events">
+            <h2 class="events__title">Выставки</h2>
+            <div class="events__list">
+                <div class="event__card">
+                    <img src="images/the_cults_of_Marie.jpg" alt="выставка языческие культы" width="400" height="300">
+                    <h3 class="event__card-title">«Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» (12+)</h3>
+                    <p class="event__card-date">15 ноября - 27 февраля 2025</p>
+                    <p class="event__card-description">Выставка «Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» приурочена к 70-летнему юбилею исследователя. 
+                        Олег Викторович - родоначальник комплексного подхода к изучению марийской духовной культуры. В основу своих работ он положил богатейший этнографический и археологический материал.</p>
+                    <a href="exhibitions.html" class="event__card-link">Подробнее</a>
+                </div>
+                <div class="event__card">
+                    <img src="images/Main_about_marie.jpg" alt="основная выставка о мари" width="400" height="300">
+                    <h3 class="event__card-title">«Этноархеология: от Imniscaris до Мари»</h3>
+                    <p class="event__card-date">11 июня 2021 - 31 декабря 2025</p>
+                    <p class="event__card-description">Экспозиция посвящена истории народа, в разное время известного как имнискарис, ц-р-мис, черемиса и только в начале XX века обретшего собственное название мари.</p>
+                    <a href="exhibitions.html" class="event__card-link">Подробнее</a>
+                </div>
+                <div class="event__card">
+                    <img src="images/history_mariy_el.jpg" alt="История марий эл" width="400" height="300">
+                    <h3 class="event__card-title">«Марийский край. Вехи истории"</h3>
+                    <p class="event__card-date">2 января - 31 декабря 2025</p>
+                    <p class="event__card-description">В экспозиции «Марийский край. Вехи истории» представлены подлинные вещественные и фотодокументальные материалы по важнейшим периодам истории Марийского края.</p>
+                    <a href="exhibitions.html" class="event__card-link">Подробнее</a>
+                </div>
+            </div>
+        </section>
+
+         <!-- Блок с актуальными событиями -->
+        <section class="events">
+            <h2 class="events__title">Актуальные события</h2>
+                <div class="events__list">
+                    <div class="event__card">
+                        <img src="images/event1.jpg" alt="Фотовыставка" width="400" height="300">
+                        <h3 class="event__card-title">Фотовыставка "Визит в Марий Эл"</h3>
+                        <p class="event__card-date">15 ноября - 30 декабря 2024</p>
+                        <p class="event__card-description">Уникальные фотографии природы и достопримечательностей республики.</p>
+                        <a href="event_poster.html" class="event__card-link">Подробнее</a>
+                    </div>
+                    <div class="event__card">
+                        <img src="images/event2.jpg" alt="Мастер-класс" width="400" height="300">
+                        <h3 class="event__card-title">Мастер-класс по древним ремеслам</h3>
+                        <p class="event__card-date">20 ноября 2024</p>
+                        <p class="event__card-description">Погрузитесь в мир древних ремесел и создайте свой уникальный артефакт.</p>
+                        <a href="event_poster.html" class="event__card-link">Подробнее</a>
+                    </div>
+                    <div class="event__card">
+                        <img src="images/event3.jpg" alt="Экскурсия" width="400" height="300">
+                        <h3 class="event__card-title">Ночная экскурсия по музею</h3>
+                        <p class="event__card-date">25 ноября 2024</p>
+                        <p class="event__card-description">Уникальная возможность увидеть музей в ночное время.</p>
+                        <a href="event_poster.html" class="event__card-link">Подробнее</a>
+                    </div>
+                </div>
+         </section>
+
+        <!-- Блок с галереей -->
+        <section class="gallery">
+            <h2 class="gallery__title">Галерея</h2>
+            <div class="gallery__images">
+                <img src="images/gallery1.jpg" alt="Экспонат 1" width="300" height="200">
+                <img src="images/gallery2.jpg" alt="Экспонат 2" width="300" height="200">
+                <img src="images/gallery3.jpg" alt="Экспонат 3" width="300" height="200">
+                <img src="images/gallery4.jpg" alt="Экспонат 4" width="300" height="200">
+            </div>
+            <a href="gallery.html" class="gallery__link">Смотреть все фото</a>
+        </section>
+
+        <!-- Блок с отзывами -->
+        <section class="reviews">
+            <h2 class="reviews__title">Отзывы посетителей</h2>
+            <div class="reviews__list">
+                <div class="review__card">
+                    <p class="review__text">"Очень интересный музей! Узнал много нового о истории Марий Эл."</p>
+                    <p class="review__author">Иван Петров</p>
+                </div>
+                <div class="review__card">
+                    <p class="review__text">"Отличная организация экскурсий. Рекомендую всем!"</p>
+                    <p class="review__author">Мария Иванова</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Сайт создан Тихоновой Дарьей, Шамаковой Алёной, Корниловой Елизаветой, Гребенщиковой Маргаритой, группа МЗ-21</p>
+        <div class="subscription">
+            <h2 class="subscription__title">Подписаться на новости</h2>
+            <form class="form form--subscription">
+                <input type="email" placeholder="Ваш e-mail" name="email" inputmode="email" required>
+                <button type="submit">
+                    <span class="visually-hidden">Подписаться</span>
+                    <img src="images/arrow.jpg" alt="Стрелка" width="20" height="20">
+                </button>
+            </form>
+        </div>
+        <div class="social">
+            <h2 class="social__title">Давайте дружить</h2>
+            <a class="social__item-link" href="https://vk.com/arxays12" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="images/vk.jpg" alt="Иконка ВКонтакте" width="20" height="20">
+                <span class="visually-hidden">ВКонтакте</span>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

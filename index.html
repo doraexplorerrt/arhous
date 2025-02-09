@@ -9,38 +9,38 @@
 </head>
 <body>
     <header class="header">
-        <section>
-            <img class="header__image" src="images/icon_a.jpg" alt="Логотип" style="display: inline-block; vertical-align: middle;"  class="header__icon" width="50" height="50" >
-            <h1 style="display: inline-block; vertical-align: middle;">Архаус</h1>
+        <section class="header__content">
+            <img class="header__icon" src="images/icon_a.jpg" alt="Логотип" width="100" height="100">
+            <h1 class="header__title">Архаус</h1>
             <p class="header__subtitle">Музей истории и археологии Республики Марий Эл</p>
         </section>
         
         <nav class="header__menu">
             <ul class="menu">
-                <li class="menu_item menu_item--active">
-                    <a class="menu_link" href="index.html">Главная</a>
+                <li class="menu__item menu__item--active">
+                    <a class="menu__link" href="index.html">Главная</a>
                 </li>
-                <li class="menu_item">
-                    <a class="menu_link" href="about_museum.html">О музее</a>
+                <li class="menu__item">
+                    <a class="menu__link" href="about_museum.html">О музее</a>
                 </li>
-                <li class="menu_item">
-                    <a class="menu_link" href="for_visitors.html">Посетителям</a>
+                <li class="menu__item">
+                    <a class="menu__link" href="for_visitors.html">Посетителям</a>
                 </li>
-                <li class="menu_item">
-                    <a class="menu_link" href="exhibitions.html">Выставки</a>
+                <li class="menu__item">
+                    <a class="menu__link" href="exhibitions.html">Выставки</a>
                 </li>
-                <li class="menu_item">
-                    <a class="menu_link" href="other_museums.html">Другие музейные площадки</a>
+                <li class="menu__item">
+                    <a class="menu__link" href="other_museums.html">Другие музейные площадки</a>
                 </li>
-                <li class="menu_item">
-                    <a class="menu_link" href="contacts.html">Контакты</a>
+                <li class="menu__item">
+                    <a class="menu__link" href="contacts.html">Контакты</a>
                 </li>
             </ul>
         </nav>
-        <button popovertarget="pay">Купить билет</button>
+        <button class="header__button" popovertarget="pay">Купить билет</button>
         <div id="pay" popover>
             <div class="close">
-                <button popovertarget="pay" popovertargetaction="hide" title="Закрыть">x</button>
+                <button class="close__button" popovertarget="pay" popovertargetaction="hide" title="Закрыть">x</button>
             </div>
         </div>
     </header>
@@ -54,67 +54,67 @@
         </section>
 
         <!-- Блок с актуальными выставками -->
-        <section class="events">
-            <h2 class="events__title">Выставки</h2>
-            <div class="events__list">
-                <div class="event__card">
-                    <img src="images/the_cults_of_Marie.jpg" alt="выставка языческие культы" width="400" height="400">
-                    <h3 class="event__card-title">«Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» (12+)</h3>
-                    <p class="event__card-date">15 ноября - 27 февраля 2025</p>
-                    <p class="event__card-description">Выставка «Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» приурочена к 70-летнему юбилею исследователя. 
+        <section class="exhibitions">
+            <h2 class="exhibitions__title">Выставки</h2>
+            <div class="exhibitions__list">
+                <div class="exhibitions__card">
+                    <img class="exhibitions__image" src="images/the_cults_of_Marie.jpg" alt="Выставка языческие культы" width="400" height="400">
+                    <h3 class="exhibitions__card-title">«Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» (12+)</h3>
+                    <p class="exhibitions__card-date">15 ноября - 27 февраля 2025</p>
+                    <p class="exhibitions__card-description">Выставка «Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» приурочена к 70-летнему юбилею исследователя. 
                         Олег Викторович - родоначальник комплексного подхода к изучению марийской духовной культуры. В основу своих работ он положил богатейший этнографический и археологический материал.</p>
-                    <a href="exhibitions.html" class="event__card-link">Подробнее</a>
+                    <a href="exhibitions.html" class="exhibitions__card-link">Подробнее</a>
                 </div>
-                <div class="event__card">
-                    <img src="images/Main_about_marie.jpg" alt="основная выставка о мари" width="400" height="400">
-                    <h3 class="event__card-title">«Этноархеология: от Imniscaris до Мари»</h3>
-                    <p class="event__card-date">11 июня 2021 - 31 декабря 2025</p>
-                    <p class="event__card-description">Экспозиция посвящена истории народа, в разное время известного как имнискарис, ц-р-мис, черемиса и только в начале XX века обретшего собственное название мари.</p>
-                    <a href="exhibitions.html" class="event__card-link">Подробнее</a>
+                <div class="exhibitions__card">
+                    <img class="exhibitions__image" src="images/Main_about_marie.jpg" alt="Основная выставка о мари" width="400" height="400">
+                    <h3 class="exhibitions__card-title">«Этноархеология: от Imniscaris до Мари»</h3>
+                    <p class="exhibitions__card-date">11 июня 2021 - 31 декабря 2025</p>
+                    <p class="exhibitions__card-description">Экспозиция посвящена истории народа, в разное время известного как имнискарис, ц-р-мис, черемиса и только в начале XX века обретшего собственное название мари.</p>
+                    <a href="exhibitions.html" class="exhibitions__card-link">Подробнее</a>
                 </div>
-                <div class="event__card">
-                    <img src="images/history_mariy_el.jpg" alt="История марий эл" width="400" height="400">
-                    <h3 class="event__card-title">«Марийский край. Вехи истории"</h3>
-                    <p class="event__card-date">2 января - 31 декабря 2025</p>
-                    <p class="event__card-description">В экспозиции «Марийский край. Вехи истории» представлены подлинные вещественные и фотодокументальные материалы по важнейшим периодам истории Марийского края.</p>
-                    <a href="exhibitions.html" class="event__card-link">Подробнее</a>
+                <div class="exhibitions__card">
+                    <img class="exhibitions__image" src="images/history_mariy_el.jpg" alt="История марий эл" width="400" height="400">
+                    <h3 class="exhibitions__card-title">«Марийский край. Вехи истории"</h3>
+                    <p class="exhibitions__card-date">2 января - 31 декабря 2025</p>
+                    <p class="exhibitions__card-description">В экспозиции «Марийский край. Вехи истории» представлены подлинные вещественные и фотодокументальные материалы по важнейшим периодам истории Марийского края.</p>
+                    <a href="exhibitions.html" class="exhibitions__card-link">Подробнее</a>
                 </div>
             </div>
         </section>
 
-         <!-- Блок с актуальными событиями -->
+        <!-- Блок с актуальными событиями -->
         <section class="events">
             <h2 class="events__title">Актуальные события</h2>
-                <div class="events__list">
-                    <div class="event__card">
-                        <img src="images/book_fair.jpg" alt="Книжная ярмарка" width="400" height="400">
-                        <h3 class="event__card-title">Фотовыставка Книжная ярмарка Гаражка МИФА</h3>
-                        <p class="event__card-date">24 - 26 января 2025</p>
-                        <p class="event__card-description">Приходите за новинками для своей библиотеки — уютные детективы, романы, классика, подарочные издания и другие книги для взрослых и детей. </p>
-                        <a href="events.html" class="event__card-link">Подробнее</a>
-                    </div>
-                    <div class="event__card">
-                        <img src="images/quest.jpg" alt="Квест" width="400" height="400">
-                        <h3 class="event__card-title">Музейный квест «АрхеоСимвол»</h3>
-                        <p class="event__card-date">25 января 2025</p>
-                        <p class="event__card-description">Отправтесь в захватывающее путешествие и изучите символы древности!</p>
-                        <a href="events.html" class="event__card-link">Подробнее</a>
-                    </div>
+            <div class="events__list">
+                <div class="events__card">
+                    <img class="events__image" src="images/book_fair.jpg" alt="Книжная ярмарка" width="400" height="400">
+                    <h3 class="events__card-title">Фотовыставка Книжная ярмарка Гаражка МИФА</h3>
+                    <p class="events__card-date">24 - 26 января 2025</p>
+                    <p class="events__card-description">Приходите за новинками для своей библиотеки — уютные детективы, романы, классика, подарочные издания и другие книги для взрослых и детей.</p>
+                    <a href="events.html" class="events__card-link">Подробнее</a>
                 </div>
-         </section>
+                <div class="events__card">
+                    <img class="events__image" src="images/quest.jpg" alt="Квест" width="400" height="400">
+                    <h3 class="events__card-title">Музейный квест «АрхеоСимвол»</h3>
+                    <p class="events__card-date">25 января 2025</p>
+                    <p class="events__card-description">Отправьтесь в захватывающее путешествие и изучите символы древности!</p>
+                    <a href="events.html" class="events__card-link">Подробнее</a>
+                </div>
+            </div>
+        </section>
 
         <!-- Блок с галереей -->
         <section class="gallery">
             <h2 class="gallery__title">Галерея</h2>
             <div class="gallery__images">
-                <img src="images/exposition.jpg" alt="Экспонат 1" width="300" height="200">
-                <img src="images/exposition2.jpg" alt="Экспонат 2" width="300" height="200">
-                <img src="images/exposition3.jpg" alt="Экспонат 3" width="300" height="200">
-                <img src="images/exposition4.jpg" alt="Экспонат 4" width="300" height="200">
-                <img src="images/exposition5.jpg" alt="Экспонат 5" width="300" height="200">
-                <img src="images/exposition6.jpg" alt="Экспонат 6" width="300" height="200">
-                <img src="images/exposition7.jpg" alt="Экспонат 7" width="300" height="200">
-                <img src="images/exposition8.jpg" alt="Экспонат 8" width="300" height="200">
+                <img class="gallery__image" src="images/exposition.jpg" alt="Экспонат 1" width="300" height="200">
+                <img class="gallery__image" src="images/exposition2.jpg" alt="Экспонат 2" width="300" height="200">
+                <img class="gallery__image" src="images/exposition3.jpg" alt="Экспонат 3" width="300" height="200">
+                <img class="gallery__image" src="images/exposition4.jpg" alt="Экспонат 4" width="300" height="200">
+                <img class="gallery__image" src="images/exposition5.jpg" alt="Экспонат 5" width="300" height="200">
+                <img class="gallery__image" src="images/exposition6.jpg" alt="Экспонат 6" width="300" height="200">
+                <img class="gallery__image" src="images/exposition7.jpg" alt="Экспонат 7" width="300" height="200">
+                <img class="gallery__image" src="images/exposition8.jpg" alt="Экспонат 8" width="300" height="200">
             </div>
             <a href="gallery.html" class="gallery__link">Смотреть все фото</a>
         </section>
@@ -123,13 +123,13 @@
         <section class="reviews">
             <h2 class="reviews__title">Отзывы посетителей</h2>
             <div class="reviews__list">
-                <div class="review__card">
-                    <p class="review__text">"Очень интересный музей! Узнал много нового о истории Марий Эл."</p>
-                    <p class="review__author">Иван Петров</p>
+                <div class="reviews__card">
+                    <p class="reviews__text">"Очень интересный музей! Узнал много нового о истории Марий Эл."</p>
+                    <p class="reviews__author">Иван Петров</p>
                 </div>
-                <div class="review__card">
-                    <p class="review__text">"Отличная организация экскурсий. Рекомендую всем!"</p>
-                    <p class="review__author">Мария Иванова</p>
+                <div class="reviews__card">
+                    <p class="reviews__text">"Отличная организация экскурсий. Рекомендую всем!"</p>
+                    <p class="reviews__author">Мария Иванова</p>
                 </div>
             </div>
         </section>
@@ -137,22 +137,22 @@
 
     <hr>
 
-    <footer>
-        <p>Сайт создан Тихоновой Дарьей, Шамаковой Алёной, Корниловой Елизаветой, Гребенщиковой Маргаритой, группа МЗ-21</p>
-        <div class="subscription">
-            <h2 class="subscription__title">Подписаться на новости</h2>
-            <form class="form form--subscription">
-                <label for="email">Ваш e-mail:</label>
-                <input type="email" placeholder="Ваш e-mail" name="email" inputmode="email" required>
-                <button type="submit">
+    <footer class="footer">
+        <p class="footer__text">Сайт создан Тихоновой Дарьей, Шамаковой Алёной, Корниловой Елизаветой, Гребенщиковой Маргаритой, группа МЗ-21</p>
+        <div class="footer__subscription">
+            <h2 class="footer__subscription-title">Подписаться на новости</h2>
+            <form class="footer__form" action="/submit" method="post">
+                <label class="footer__label" for="email">Ваш e-mail:</label>
+                <input class="footer__input" type="email" id="email" placeholder="Ваш e-mail" name="email" inputmode="email" required>
+                <button class="footer__button" type="submit">
                     <span class="visually-hidden">Подписаться</span>
                     <img src="images/arrow.jpg" alt="Стрелка" width="20" height="20">
                 </button>
             </form>
         </div>
-        <div class="social">
-            <h2 class="social__title">Давайте дружить</h2>
-            <a class="social__item-link" href="https://vk.com/arxays12" target="_blank" rel="noopener noreferrer nofollow">
+        <div class="footer__social">
+            <h2 class="footer__social-title">Давайте дружить</h2>
+            <a class="footer__social-link" href="https://vk.com/arxays12" target="_blank" rel="noopener noreferrer nofollow">
                 <img src="images/vk.jpg" alt="Иконка ВКонтакте" width="20" height="20">
                 <span class="visually-hidden">ВКонтакте</span>
             </a>

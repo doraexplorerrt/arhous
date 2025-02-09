@@ -1,11 +1,15 @@
+@import url('fonts.css');
+
 /* Общие стили */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: #333;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #000000;
     background-color: #f9f9f9;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 /* Стили для иконки */
@@ -13,6 +17,28 @@ body {
     width: 40px; /* Ширина иконки */
     height: 40px; /* Высота иконки */
     border-radius: 50%; /* Круглая иконка (опционально) */
+}
+
+/* Добавьте это в ваш файл styles.css */
+
+.header__content {
+    display: flex;          /* Включаем flex-контейнер */
+    align-items: center;    /* Выравниваем элементы по вертикали */
+    gap: 20px;              /* Расстояние между иконкой и текстом */
+}
+
+.header__icon {
+    flex-shrink: 0;         /* Запрещаем иконке сжиматься */
+}
+
+.header__title {
+    margin: 0;              /* Убираем стандартные отступы у заголовка */
+    font-size: 2.5rem;      /* Размер шрифта (настройте под ваш дизайн) */
+}
+
+.header__subtitle {
+    margin: 0;              /* Убираем отступы у подзаголовка */
+    font-size: 1.2rem;      /* Размер шрифта (настройте под ваш дизайн) */
 }
 
 /* Заголовки */
@@ -25,6 +51,7 @@ h1 {
     align-items: center; /* Выравнивание иконки и текста по вертикали */
     gap: 10px; /* Расстояние между иконкой и текстом */
     font-size: 2.5rem;
+    font-weight: bold;
 }
 
 h2 {
@@ -39,7 +66,7 @@ h3 {
 
 /* Ссылки */
 a {
-    color: #3498db;
+    color: #030303;
     text-decoration: none;
 }
 
@@ -49,8 +76,12 @@ a:hover {
 
 /* Навигация */
 .header__menu {
-    background-color: #636363;
+    background-color: #fdb009;
     padding: 10px 0;
+}
+
+.header__button:focus {
+    outline: 2px solid #fdb009;
 }
 
 .menu {
@@ -71,12 +102,16 @@ a:hover {
 }
 
 .menu_link:hover {
-    color: #3498db;
+    color: #000000;
+}
+
+main {
+    padding: 20px; /* Отступы со всех сторон */
 }
 
 /* Кнопки */
 button {
-    background-color: #393a3a;
+    background-color: #fcd218;
     color: rgb(8, 8, 8);
     border: none;
     padding: 10px 20px;
@@ -99,6 +134,10 @@ footer {
 
 footer a {
     color: #3498db;
+}
+
+.footer__input:disabled {
+    background-color: #f0f0f0;
 }
 
 /* Галерея */

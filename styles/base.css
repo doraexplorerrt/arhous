@@ -1,16 +1,29 @@
+:root {
+    --primary-color: #fdb009; /* Основной цвет */
+    --secondary-color: #fcd218; /* Вторичный цвет */
+    --text-color: #000000; /* Цвет текста */
+    --background-color: #ffffff; /* Цвет фона */
+    --font-family: 'Montserrat', Arial, sans-serif; /* Основной шрифт */
+}
+
 *,
 ::before,
 ::after {
 box-sizing: border-box;
 }
+
 html,
 body {
-font-family: 'Arial', sans-serif;
+font-family: var(--font-family);
 font-size: 18px;
 line-height: 30px;
-color: #000000;
-background-color: #ffffff;
+color: var(--text-color);
+background-color: var(--background-color);
+margin: 0;
+padding: 0;
 overflow-x: hidden;
+max-width: 1440px;
+margin: 0 auto;
 }
 img {
 display: block;

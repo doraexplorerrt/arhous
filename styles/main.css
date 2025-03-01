@@ -1,0 +1,91 @@
+.main {
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.5rem;
+    font-weight: bold; /* Жирное начертание */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold; /* Жирное начертание */
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: normal; /* Обычное начертание */
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.gallery__images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery__images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.reviews__list {
+    display: flex;
+    gap: 20px;
+}
+
+.review__card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.form--subscription {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form--subscription input {
+    padding: 10px;
+    border: 1px solid #0f0f0f;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 250px;
+}
+
+.form--subscription button {
+    background-color: #858585;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form--subscription button:hover {
+    background-color: var(--primary-color);
+}

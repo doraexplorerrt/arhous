@@ -1,0 +1,28 @@
+.swiper-wrapper {
+  padding-bottom: 20px;
+}
+
+.swiper-slide {
+  justify-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary-color) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary-color) !important;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+}
+
+.swiper-pagination  {
+  bottom: -4px !important;
+}

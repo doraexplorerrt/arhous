@@ -8,6 +8,14 @@
 @import "footer.css";
 /* Подключение стилей относящихся к main */
 @import "main.css";
+/* Подключение стилей относящихся к dialog */
+@import "dialog.css";
+/* Подключение стилей относящихся к ticket_form */
+@import "ticket_form.css";
+/* Подключение стилей относящихся к preloader */
+@import "preloader.css";
+/* Подключение стилей относящихся к slider */
+@import "slider.css";
 
 :root {
     --primary-color: #fdb009; /* Основной цвет */
@@ -173,17 +181,12 @@ footer a {
 }
 
 /* Галерея */
-.gallery__images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.gallery__images img {
+    border-radius: 8px;
+    height: 200px;
+    /* width: 100%; */
 }
 
-.gallery__images img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
 
 /* Отзывы */
 .reviews__list {
@@ -226,3 +229,48 @@ footer a {
 .form--subscription button:hover {
     background-color: #858585;
 }
+
+
+/* Кнопка скролла вверх */
+.scroll-top {
+    position: fixed;
+    right: 50px;
+    bottom: -70px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+  
+    background-color: var(--secondary-color);
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
+    border-radius: 5px;
+    border: none;
+  
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  
+    z-index: 1;
+  
+    cursor: pointer;
+  
+    transition: background-color 0.1s, bottom 0.1s linear, opacity 0.1s,
+      visibility 0.1s;
+  }
+  
+  .scroll-top:hover,
+  .scroll-top:focus {
+    background-color: var(--primary-color);
+  }
+  
+  .scroll-top--show {
+    bottom: 115px;
+  
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  

@@ -1,160 +1,396 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Архаус - Музей истории и археологии</title>
-    <link rel="stylesheet" href="styles/styles.css"> <!-- Подключение стилей -->
-    <link rel="stylesheet" href="styles/normalize.css">
-</head>
-<body>
-    <header class="header">
-        <section class="header__content">
-            <img class="header__icon" src="images/icon_a.jpg" alt="Логотип" width="100" height="100">
-            <h1 class="header__title">Архаус</h1>
-            <p class="header__subtitle">Музей истории и археологии Республики Марий Эл</p>
-        </section>
-        
-        <nav class="header__menu">
-            <ul class="menu">
-                <li class="menu__item menu__item--active">
-                    <a class="menu__link" href="index.html">Главная</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="about_museum.html">О музее</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="for_visitors.html">Посетителям</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="exhibitions.html">Выставки</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="other_museums.html">Другие музейные площадки</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="contacts.html">Контакты</a>
-                </li>
-            </ul>
-        </nav>
-        <button class="header__button" popovertarget="pay">Купить билет</button>
-        <div id="pay" popover>
-            <div class="close">
-                <button class="close__button" popovertarget="pay" popovertargetaction="hide" title="Закрыть">x</button>
-            </div>
-        </div>
-    </header>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <!-- Подключение библиотеки swiper для карусели -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
 
-    <main class="main">
+    <div class="content">
+      <header class="header">
+        <section class="header__content">
+          <img
+            class="header__icon"
+            src="images/icon_a.jpg"
+            alt="Логотип"
+            width="100"
+            height="100"
+          />
+          <h1 class="header__title">Архаус</h1>
+          <p class="header__subtitle">
+            Музей истории и археологии Республики Марий Эл
+          </p>
+        </section>
+
+        <nav class="header__menu">
+          <ul class="menu">
+            <!-- <li class="menu__item menu__item--active">
+            <a class="menu__link" href="index.html">Ссылка 1</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="about_museum.html">Ссылка 2</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="for_visitors.html">Ссылка 3</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="exhibitions.html">Ссылка 4</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="other_museums.html">Ссылка 5</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="contacts.html">Ссылка 6</a>
+          </li> -->
+          </ul>
+        </nav>
+
+        <!-- Кнопка открытия диалога -->
+        <button class="header__button" id="open-ticket-dialog">
+          Купить билет
+        </button>
+
+        <!-- Основной контейнер диалога -->
+        <div id="ticket-dialog" class="dialog">
+          <!-- Затемненный фон -->
+          <div class="dialog__overlay"></div>
+
+          <!-- Содержимое диалога -->
+          <div class="dialog__content">
+            <!-- Заголовок и кнопка закрытия -->
+            <div class="dialog__header">
+              <h2 class="dialog__title">Покупка билетов</h2>
+              <button class="dialog__close close-button" title="Закрыть">
+                ×
+              </button>
+            </div>
+
+            <!-- Форма покупки билетов -->
+            <form class="ticket-form" >
+              <div class="ticket-form__field">
+                <label class="ticket-form__label" for="name">Имя:</label>
+                <input
+                  class="ticket-form__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Введите имя"
+                  required
+                />
+              </div>
+
+              <div class="ticket-form__field">
+                <label class="ticket-form__label" for="email">Email:</label>
+                <input
+                  class="ticket-form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Введите email"
+                  required
+                />
+              </div>
+
+              <div class="ticket-form__field">
+                <label class="ticket-form__label" for="quantity"
+                  >Количество билетов:</label
+                >
+                <input
+                  class="ticket-form__input"
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  value="1"
+                />
+              </div>
+
+              <button class="ticket-form__submit button" type="submit">
+                Оформить заказ
+              </button>
+            </form>
+            <p id="application-message"class="application__message"></p>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
         <!-- Блок с приветствием -->
         <section class="welcome">
-            <h2 class="welcome__title">Добро пожаловать в Архаус!</h2>
-            <p class="welcome__text">Мы рады приветствовать вас в нашем музее, где история оживает. Узнайте больше о культуре, традициях и археологических находках Марийского края.</p>
-            <a href="about_museum.html" class="welcome__button">Узнать больше</a>
+          <h2 class="welcome__title">Добро пожаловать в Архаус!</h2>
+          <p class="welcome__text">
+            Мы рады приветствовать вас в нашем музее, где история оживает.
+            Узнайте больше о культуре, традициях и археологических находках
+            Марийского края.
+          </p>
+          <a href="about_museum.html" class="welcome__button">Узнать больше</a>
         </section>
 
         <!-- Блок с актуальными выставками -->
         <section class="exhibitions">
-            <h2 class="exhibitions__title">Выставки</h2>
-            <div class="exhibitions__list">
-                <div class="exhibitions__card">
-                    <img class="exhibitions__image" src="images/the_cults_of_Marie.jpg" alt="Выставка языческие культы" width="400" height="400">
-                    <h3 class="exhibitions__card-title">«Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» (12+)</h3>
-                    <p class="exhibitions__card-date">15 ноября - 27 февраля 2025</p>
-                    <p class="exhibitions__card-description">Выставка «Языческие культы древнего населения Марийского Поволжья. Памяти О. В. Данилова посвящается» приурочена к 70-летнему юбилею исследователя. 
-                        Олег Викторович - родоначальник комплексного подхода к изучению марийской духовной культуры. В основу своих работ он положил богатейший этнографический и археологический материал.</p>
-                    <a href="exhibitions.html" class="exhibitions__card-link">Подробнее</a>
-                </div>
-                <div class="exhibitions__card">
-                    <img class="exhibitions__image" src="images/Main_about_marie.jpg" alt="Основная выставка о мари" width="400" height="400">
-                    <h3 class="exhibitions__card-title">«Этноархеология: от Imniscaris до Мари»</h3>
-                    <p class="exhibitions__card-date">11 июня 2021 - 31 декабря 2025</p>
-                    <p class="exhibitions__card-description">Экспозиция посвящена истории народа, в разное время известного как имнискарис, ц-р-мис, черемиса и только в начале XX века обретшего собственное название мари.</p>
-                    <a href="exhibitions.html" class="exhibitions__card-link">Подробнее</a>
-                </div>
-                <div class="exhibitions__card">
-                    <img class="exhibitions__image" src="images/history_mariy_el.jpg" alt="История марий эл" width="400" height="400">
-                    <h3 class="exhibitions__card-title">«Марийский край. Вехи истории"</h3>
-                    <p class="exhibitions__card-date">2 января - 31 декабря 2025</p>
-                    <p class="exhibitions__card-description">В экспозиции «Марийский край. Вехи истории» представлены подлинные вещественные и фотодокументальные материалы по важнейшим периодам истории Марийского края.</p>
-                    <a href="exhibitions.html" class="exhibitions__card-link">Подробнее</a>
-                </div>
-            </div>
+          <h2 class="exhibitions__title">Выставки</h2>
+          <div class="exhibitions__list">
+            <!-- <div class="exhibitions__card">
+            <img
+              class="exhibitions__image"
+              src="images/the_cults_of_Marie.jpg"
+              alt="Выставка языческие культы"
+              width="400"
+              height="400"
+            />
+            <h3 class="exhibitions__card-title">
+              «Языческие культы древнего населения Марийского Поволжья. Памяти
+              О. В. Данилова посвящается» (12+)
+            </h3>
+            <p class="exhibitions__card-date">15 ноября - 27 февраля 2025</p>
+            <p class="exhibitions__card-description">
+              Выставка «Языческие культы древнего населения Марийского Поволжья.
+              Памяти О. В. Данилова посвящается» приурочена к 70-летнему юбилею
+              исследователя. Олег Викторович - родоначальник комплексного
+              подхода к изучению марийской духовной культуры. В основу своих
+              работ он положил богатейший этнографический и археологический
+              материал.
+            </p>
+            <a href="exhibitions.html" class="exhibitions__card-link"
+              >Подробнее</a
+            >
+          </div>
+          <div class="exhibitions__card">
+            <img
+              class="exhibitions__image"
+              src="images/Main_about_marie.jpg"
+              alt="Основная выставка о мари"
+              width="400"
+              height="400"
+            />
+            <h3 class="exhibitions__card-title">
+              «Этноархеология: от Imniscaris до Мари»
+            </h3>
+            <p class="exhibitions__card-date">11 июня 2021 - 31 декабря 2025</p>
+            <p class="exhibitions__card-description">
+              Экспозиция посвящена истории народа, в разное время известного как
+              имнискарис, ц-р-мис, черемиса и только в начале XX века обретшего
+              собственное название мари.
+            </p>
+            <a href="exhibitions.html" class="exhibitions__card-link"
+              >Подробнее</a
+            >
+          </div>
+          <div class="exhibitions__card">
+            <img
+              class="exhibitions__image"
+              src="images/history_mariy_el.jpg"
+              alt="История марий эл"
+              width="400"
+              height="400"
+            />
+            <h3 class="exhibitions__card-title">
+              «Марийский край. Вехи истории"
+            </h3>
+            <p class="exhibitions__card-date">2 января - 31 декабря 2025</p>
+            <p class="exhibitions__card-description">
+              В экспозиции «Марийский край. Вехи истории» представлены подлинные
+              вещественные и фотодокументальные материалы по важнейшим периодам
+              истории Марийского края.
+            </p>
+            <a href="exhibitions.html" class="exhibitions__card-link"
+              >Подробнее</a
+            >
+          </div> -->
+          </div>
         </section>
 
         <!-- Блок с актуальными событиями -->
         <section class="events">
-            <h2 class="events__title">Актуальные события</h2>
-            <div class="events__list">
-                <div class="events__card">
-                    <img class="events__image" src="images/book_fair.jpg" alt="Книжная ярмарка" width="400" height="400">
-                    <h3 class="events__card-title">Фотовыставка Книжная ярмарка Гаражка МИФА</h3>
-                    <p class="events__card-date">24 - 26 января 2025</p>
-                    <p class="events__card-description">Приходите за новинками для своей библиотеки — уютные детективы, романы, классика, подарочные издания и другие книги для взрослых и детей.</p>
-                    <a href="events.html" class="events__card-link">Подробнее</a>
-                </div>
-                <div class="events__card">
-                    <img class="events__image" src="images/quest.jpg" alt="Квест" width="400" height="400">
-                    <h3 class="events__card-title">Музейный квест «АрхеоСимвол»</h3>
-                    <p class="events__card-date">25 января 2025</p>
-                    <p class="events__card-description">Отправьтесь в захватывающее путешествие и изучите символы древности!</p>
-                    <a href="events.html" class="events__card-link">Подробнее</a>
-                </div>
+          <h2 class="events__title">Актуальные события</h2>
+          <div class="events__list">
+            <div class="events__card">
+              <img
+                class="events__image"
+                src="images/book_fair.jpg"
+                alt="Книжная ярмарка"
+                width="400"
+                height="400"
+              />
+              <h3 class="events__card-title">
+                Фотовыставка Книжная ярмарка Гаражка МИФА
+              </h3>
+              <p class="events__card-date">24 - 26 января 2025</p>
+              <p class="events__card-description">
+                Приходите за новинками для своей библиотеки — уютные детективы,
+                романы, классика, подарочные издания и другие книги для взрослых
+                и детей.
+              </p>
+              <a href="events.html" class="events__card-link">Подробнее</a>
             </div>
+            <div class="events__card">
+              <img
+                class="events__image"
+                src="images/quest.jpg"
+                alt="Квест"
+                width="400"
+                height="400"
+              />
+              <h3 class="events__card-title">Музейный квест «АрхеоСимвол»</h3>
+              <p class="events__card-date">25 января 2025</p>
+              <p class="events__card-description">
+                Отправьтесь в захватывающее путешествие и изучите символы
+                древности!
+              </p>
+              <a href="events.html" class="events__card-link">Подробнее</a>
+            </div>
+          </div>
         </section>
 
         <!-- Блок с галереей -->
         <section class="gallery">
-            <h2 class="gallery__title">Галерея</h2>
-            <div class="gallery__images">
-                <img class="gallery__image" src="images/exposition.jpg" alt="Экспонат 1" width="300" height="200">
-                <img class="gallery__image" src="images/exposition2.jpg" alt="Экспонат 2" width="300" height="200">
-                <img class="gallery__image" src="images/exposition3.jpg" alt="Экспонат 3" width="300" height="200">
-                <img class="gallery__image" src="images/exposition4.jpg" alt="Экспонат 4" width="300" height="200">
-                <img class="gallery__image" src="images/exposition5.jpg" alt="Экспонат 5" width="300" height="200">
-                <img class="gallery__image" src="images/exposition6.jpg" alt="Экспонат 6" width="300" height="200">
-                <img class="gallery__image" src="images/exposition7.jpg" alt="Экспонат 7" width="300" height="200">
-                <img class="gallery__image" src="images/exposition8.jpg" alt="Экспонат 8" width="300" height="200">
+          <h2 class="gallery__title">Галерея</h2>
+          <div class="swiper mySwiper">
+            <div class="gallery__images swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition.jpg"
+                  alt="Экспонат 1"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition2.jpg"
+                  alt="Экспонат 2"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition3.jpg"
+                  alt="Экспонат 3"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition4.jpg"
+                  alt="Экспонат 4"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition5.jpg"
+                  alt="Экспонат 5"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition6.jpg"
+                  alt="Экспонат 6"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition7.jpg"
+                  alt="Экспонат 7"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/exposition8.jpg"
+                  alt="Экспонат 8"
+                />
+              </div>
             </div>
-            <a href="gallery.html" class="gallery__link">Смотреть все фото</a>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <a href="gallery.html" class="gallery__link">Смотреть все фото</a>
         </section>
 
         <!-- Блок с отзывами -->
         <section class="reviews">
-            <h2 class="reviews__title">Отзывы посетителей</h2>
-            <div class="reviews__list">
-                <div class="reviews__card">
-                    <p class="reviews__text">"Очень интересный музей! Узнал много нового о истории Марий Эл."</p>
-                    <p class="reviews__author">Иван Петров</p>
-                </div>
-                <div class="reviews__card">
-                    <p class="reviews__text">"Отличная организация экскурсий. Рекомендую всем!"</p>
-                    <p class="reviews__author">Мария Иванова</p>
-                </div>
+          <h2 class="reviews__title">Отзывы посетителей</h2>
+          <div class="reviews__list">
+            <div class="reviews__card">
+              <p class="reviews__text">
+                "Очень интересный музей! Узнал много нового о истории Марий Эл."
+              </p>
+              <p class="reviews__author">Иван Петров</p>
             </div>
+            <div class="reviews__card">
+              <p class="reviews__text">
+                "Отличная организация экскурсий. Рекомендую всем!"
+              </p>
+              <p class="reviews__author">Мария Иванова</p>
+            </div>
+          </div>
         </section>
-    </main>
+      </main>
 
-    <hr>
+      <hr />
 
-    <footer class="footer">
-        <p class="footer__text">Сайт создан Тихоновой Дарьей, Шамаковой Алёной, Корниловой Елизаветой, Гребенщиковой Маргаритой, группа МЗ-21</p>
+      <footer class="footer">
+        <p class="footer__text">
+          Сайт создан Тихоновой Дарьей, Шамаковой Алёной, Корниловой Елизаветой,
+          Гребенщиковой Маргаритой, группа МЗ-21
+        </p>
         <div class="footer__subscription">
-            <h2 class="footer__subscription-title">Подписаться на новости</h2>
-            <form class="footer__form" action="/submit" method="post">
-                <label class="footer__label" for="email">Ваш e-mail:</label>
-                <input class="footer__input" type="email" id="email" placeholder="Ваш e-mail" name="email" inputmode="email" required>
-                <button class="footer__button" type="submit">
-                    <span class="visually-hidden">Подписаться</span>
-                    <img src="images/arrow.jpg" alt="Стрелка" width="20" height="20">
-                </button>
-            </form>
+          <h2 class="footer__subscription-title">Подписаться на новости</h2>
+          <form class="footer__form" action="/submit" method="post">
+            <label class="footer__label" for="email">Ваш e-mail:</label>
+            <input
+              class="footer__input"
+              type="email"
+              id="email"
+              placeholder="Ваш e-mail"
+              name="email"
+              inputmode="email"
+              required
+            />
+            <button class="footer__button" type="submit">
+              <span class="visually-hidden">Подписаться</span>
+              <img
+                src="images/arrow.jpg"
+                alt="Стрелка"
+                width="20"
+                height="20"
+              />
+            </button>
+          </form>
         </div>
-        
-    </footer>
+      </footer>
 
+      <!-- Кнопка скролла вверх -->
+      <button class="scroll-top" type="button" title="Наверх">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32px"
+          height="32px"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M12 5V19M12 5L6 11M12 5L18 11"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span class="visually-hidden">Наверх</span>
+      </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="scripts/script.js"></script>
-
-</body>
+  </body>
 </html>
